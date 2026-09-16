@@ -1,0 +1,25 @@
+PRÓXIMO PASSO — COLOCAR O SITE NO AR
+
+1) Este pacote já contém:
+- site visual da Letícia Vieira
+- 4 presentes com valores fixos
+- geração de cobrança Pix pela BravoPay
+- QR Code Pix
+- Pix copia e cola
+- consulta automática do status do pagamento
+- endpoint de webhook preparado
+- chave da BravoPay somente no servidor
+
+2) NÃO coloque sua chave bp_live_ dentro do index.html.
+Ela deverá ser cadastrada como variável secreta no serviço de hospedagem.
+
+3) Quando escolhermos o hosting, você vai cadastrar:
+BRAVOPAY_API_KEY = sua chave bp_live_...
+BRAVOPAY_WEBHOOK_SECRET = segredo que a BravoPay fornecer ao cadastrar o webhook
+
+4) URL do webhook:
+https://SEU-DOMINIO/api/webhook/bravopay
+
+5) Antes de publicar, faça um teste com uma cobrança pequena.
+
+Você não precisa editar o código para configurar os valores dos quatro presentes.
