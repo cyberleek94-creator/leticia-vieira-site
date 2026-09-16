@@ -1,0 +1,4 @@
+VERSÃO SEM VÍDEO
+
+Extraia esta pasta inteira e abra o index.html.
+A seção de vídeo/momentos foi removida.

@@ -1,0 +1,15 @@
+LETÍCIA VIEIRA — PROTÓTIPO V2
+
+Remodelado com estética mais adulta e premium:
+- Fotos reais disponíveis da personagem inseridas no site.
+- Hero editorial com imagem principal.
+- Segunda imagem na apresentação.
+- Terceira imagem na área de conteúdo/momentos.
+- Botões discretos, sofisticados e com hierarquia visual.
+- Emojis substituídos/limitados a símbolos visuais mais elegantes.
+- Cards de presentes com bordas, estados hover, destaque de opção e tipografia premium.
+- Modal Pix refinado.
+- Responsivo para celular.
+
+A área de vídeo usa uma imagem como capa nesta versão. Depois podemos trocar por um vídeo real da Letícia.
+O Pix ainda é somente protótipo; a integração BravoPay entra na próxima etapa.
