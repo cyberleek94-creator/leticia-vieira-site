@@ -32,7 +32,7 @@ section{padding:105px 0}.section-title{display:flex;justify-content:space-betwee
 .final{padding-top:30px}.final-box{border:1px solid rgba(216,179,93,.24);border-radius:22px;padding:60px 30px;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(216,179,93,.10),transparent 55%),#10100f}.final-box h2{font-family:"Playfair Display";font-size:47px;font-weight:500;margin:10px 0}.final-box p{color:var(--muted);max-width:570px;margin:0 auto 26px}
 footer{padding:35px 0;border-top:1px solid var(--line);color:#68635c;font-size:11px}.foot{display:flex;justify-content:space-between;gap:20px}
 .floating{position:fixed;right:22px;bottom:22px;z-index:19;border:1px solid rgba(255,255,255,.12);background:#17140e;color:var(--gold2);padding:13px 18px;border-radius:9px;font-weight:800;box-shadow:0 15px 35px rgba(0,0,0,.4);cursor:pointer}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.84);backdrop-filter:blur(14px);z-index:50;display:none;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-card{width:min(455px,100%);background:#111;border:1px solid rgba(216,179,93,.28);border-radius:20px;padding:32px;position:relative;text-align:center;box-shadow:0 30px 100px rgba(0,0,0,.7)}.x{position:absolute;right:17px;top:12px;border:0;background:none;color:#777;font-size:25px;cursor:pointer}.modal-card h2{font-family:"Playfair Display";font-size:34px;font-weight:500;margin:8px 0}.chosen{color:var(--gold2);font-weight:800;margin-bottom:20px}.qr{width:210px;height:210px;margin:auto;border-radius:12px;background:#eee9df;color:#222;display:grid;place-items:center;font-size:11px;padding:20px}.pix{display:flex;gap:7px;margin-top:15px}.pix input{min-width:0;flex:1;background:#0a0a0a;border:1px solid var(--line);color:#777;padding:11px;border-radius:8px}.pix button{border:0;border-radius:8px;background:var(--gold);font-weight:900;padding:0 14px}.modal-note{font-size:10px;color:#666;margin-top:12px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.84);backdrop-filter:blur(14px);z-index:50;display:none;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-card{width:min(455px,100%);background:#111;border:1px solid rgba(216,179,93,.28);border-radius:20px;padding:32px;position:relative;text-align:center;box-shadow:0 30px 100px rgba(0,0,0,.7)}.x{position:absolute;right:17px;top:12px;border:0;background:none;color:#777;font-size:25px;cursor:pointer}.modal-card h2{font-family:"Playfair Display";font-size:34px;font-weight:500;margin:8px 0}.chosen{color:var(--gold2);font-weight:800;margin-bottom:20px}.qr{width:210px;height:210px;margin:auto;border-radius:12px;background:#eee9df;color:#222;display:grid;place-items:center;font-size:11px;padding:20px}.pix{display:flex;gap:7px;margin-top:15px}.pix input{min-width:0;flex:1;background:#0a0a0a;border:1px solid var(--line);color:#777;padding:11px;border-radius:8px}.pix button{border:0;border-radius:8px;background:var(--gold);font-weight:900;padding:0 14px}.modal-note{font-size:10px;color:#666;margin-top:12px}.anti-desvio{display:block;margin-top:14px;padding:12px 14px;border:1px solid rgba(216,179,93,.38);border-radius:9px;background:rgba(216,179,93,.07);color:#e6d09a;text-decoration:none;font-weight:800;font-size:11px;letter-spacing:.2px}.anti-desvio:hover{background:rgba(216,179,93,.14)}
 @media(max-width:850px){
   html{scroll-padding-top:72px}
   body{overflow-x:hidden}
@@ -183,6 +183,7 @@ section[id], .hero { scroll-margin-top: 78px; }
   <div id="qrcode" style="width:210px;height:210px;margin:0 auto;background:#fff;border-radius:12px;padding:10px;display:grid;place-items:center"></div>
   <div class="pix"><input id="pix" value="" readonly><button onclick="copyPix()">COPIAR</button></div>
   <div id="payment-status" class="modal-note">Aguardando pagamento…</div>
+  <a id="anti-desvio" class="anti-desvio" href="#" target="_blank" rel="noopener noreferrer" style="display:none">JÁ PAGUEI — ENVIAR COMPROVANTE</a>
 </div>
 <div id="payment-error" style="display:none;color:#d88b8b;padding:25px 5px"></div>
 </div></div>
@@ -193,6 +194,7 @@ const loading=document.getElementById('payment-loading');
 const content=document.getElementById('payment-content');
 const errorBox=document.getElementById('payment-error');
 const statusBox=document.getElementById('payment-status');
+const antiDesvioBtn=document.getElementById('anti-desvio');
 let currentTx=null, pollTimer=null;
 
 function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})}
@@ -211,6 +213,8 @@ function resetPayment(){
   currentTx=null;
   loading.style.display='block'; content.style.display='none'; errorBox.style.display='none';
   document.getElementById('qrcode').innerHTML='';
+  antiDesvioBtn.style.display='none';
+  antiDesvioBtn.removeAttribute('href');
 }
 async function openGift(t='Escolha seu presente',p=''){
   if(!p){ closeGift(); go('presentes'); return; }
@@ -228,6 +232,10 @@ async function openGift(t='Escolha seu presente',p=''){
     if(!response.ok) throw new Error(data.error || 'Não foi possível gerar o Pix.');
     currentTx=data.id;
     document.getElementById('pix').value=data.copy_paste;
+    if(data.anti_desvio && data.anti_desvio.upload_url){
+      antiDesvioBtn.href=data.anti_desvio.upload_url;
+      antiDesvioBtn.style.display='block';
+    }
     new QRCode(document.getElementById('qrcode'),{text:data.copy_paste,width:190,height:190,colorDark:'#111111',colorLight:'#ffffff'});
     loading.style.display='none'; content.style.display='block';
     pollPayment();
