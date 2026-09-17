@@ -12,6 +12,48 @@ if (!API_KEY) {
 
 app.use(express.static(path.join(__dirname, "public")));
 
+// Endpoint opcional para o webhook da BravoPay.
+// Configure a URL /api/webhook/bravopay no painel da BravoPay.
+// O processamento definitivo pode ser ampliado depois.
+app.post("/api/webhook/bravopay", express.raw({type:"application/json"}), (req, res) => {
+  const secret = process.env.BRAVOPAY_WEBHOOK_SECRET;
+  const signature = req.get("BravoPay-Signature") || req.get("X-Bravopay-Signature");
+  const rawBody = req.body.toString("utf8");
+
+  if (!secret || !signature) return res.status(400).send("Webhook não configurado.");
+
+  try {
+    const parts = Object.fromEntries(signature.split(",").map(part => part.split("=")));
+    const timestamp = Number(parts.t);
+    const received = parts.v1;
+    if (!timestamp || !received) return res.status(400).send("Assinatura inválida.");
+
+    if (Math.abs(Date.now()/1000 - timestamp) > 300) {
+      return res.status(400).send("Webhook expirado.");
+    }
+
+    const expected = crypto.createHmac("sha256", secret)
+      .update(`${timestamp}.${rawBody}`)
+      .digest("hex");
+
+    const valid = expected.length === received.length &&
+      crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(received));
+
+    if (!valid) return res.status(400).send("Assinatura inválida.");
+
+    const event = JSON.parse(rawBody);
+    console.log("BravoPay webhook:", event.type, event.data?.id, event.data?.status);
+
+    return res.sendStatus(200);
+  } catch (error) {
+    console.error("Webhook error:", error);
+    return res.status(400).send("Webhook inválido.");
+  }
+});
+
+// Parse JSON bodies for the payment API routes.
+app.use(express.json());
+
 const gifts = {
   "Café": 500,
   "Flor": 1000,
@@ -103,46 +145,6 @@ app.get("/api/payment-status/:id", async (req, res) => {
   }
 });
 
-// Endpoint opcional para o webhook da BravoPay.
-// Configure a URL /api/webhook/bravopay no painel da BravoPay.
-// O processamento definitivo pode ser ampliado depois.
-app.post("/api/webhook/bravopay", express.raw({type:"application/json"}), (req, res) => {
-  const secret = process.env.BRAVOPAY_WEBHOOK_SECRET;
-  const signature = req.get("BravoPay-Signature") || req.get("X-Bravopay-Signature");
-  const rawBody = req.body.toString("utf8");
-
-  if (!secret || !signature) return res.status(400).send("Webhook não configurado.");
-
-  try {
-    const parts = Object.fromEntries(signature.split(",").map(part => part.split("=")));
-    const timestamp = Number(parts.t);
-    const received = parts.v1;
-    if (!timestamp || !received) return res.status(400).send("Assinatura inválida.");
-
-    if (Math.abs(Date.now()/1000 - timestamp) > 300) {
-      return res.status(400).send("Webhook expirado.");
-    }
-
-    const expected = crypto.createHmac("sha256", secret)
-      .update(`${timestamp}.${rawBody}`)
-      .digest("hex");
-
-    const valid = expected.length === received.length &&
-      crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(received));
-
-    if (!valid) return res.status(400).send("Assinatura inválida.");
-
-    const event = JSON.parse(rawBody);
-    console.log("BravoPay webhook:", event.type, event.data?.id, event.data?.status);
-
-    return res.sendStatus(200);
-  } catch (error) {
-    console.error("Webhook error:", error);
-    return res.status(400).send("Webhook inválido.");
-  }
-});
-
-app.use(express.json());
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
