@@ -109,6 +109,30 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:#68635c;font-size:1
   .modal-card h2{font-size:28px}
   #qrcode{width:185px !important;height:185px !important}
 }
+
+/* Mobile refinement v2 — keeps the floating CTA out of the way and improves first-screen spacing. */
+section[id], .hero { scroll-margin-top: 78px; }
+@media(max-width:850px){
+  .hero { padding-top: 78px; }
+  .hero > div:first-child { padding-bottom: 4px; }
+  .hero h1 { max-width: 620px; }
+  .floating {
+    left: auto; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom));
+    width: auto; max-width: calc(100% - 24px); min-height: 44px;
+    padding: 11px 14px; font-size: 11px;
+  }
+  .floating.is-hidden { opacity: 0; pointer-events: none; transform: translateY(12px); }
+}
+@media(max-width:520px){
+  section[id], .hero { scroll-margin-top: 70px; }
+  .hero { padding-top: 76px; }
+  .hero-media { margin-bottom: 2px; }
+  .floating { right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); min-height: 42px; padding: 10px 12px; font-size: 10px; border-radius: 10px; }
+}
+@media(max-width:380px){
+  .hero { padding-top: 74px; }
+  .floating { right: 8px; bottom: calc(8px + env(safe-area-inset-bottom)); font-size: 9px; padding: 9px 11px; }
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gift{transition:none}.gift:hover{transform:none}}
 </style>
 </head>
@@ -147,7 +171,7 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:#68635c;font-size:1
 </main>
 
 <footer><div class="wrap foot"><span>© 2026 Letícia Vieira</span><span>Letícia Vieira é uma personagem virtual criada com inteligência artificial.</span></div></footer>
-<button class="floating" onclick="go('presentes')">✦ ENVIAR UM PRESENTE</button>
+<button class="floating" id="floatingCta" onclick="go('presentes')">✦ ENVIAR UM PRESENTE</button>
 
 <div class="modal" id="modal"><div class="modal-card">
 <button class="x" onclick="closeGift()">×</button>
@@ -171,7 +195,14 @@ const errorBox=document.getElementById('payment-error');
 const statusBox=document.getElementById('payment-status');
 let currentTx=null, pollTimer=null;
 
-function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})}
+const floatingCta=document.getElementById('floatingCta');
+function updateFloatingCta(){
+  if(!floatingCta) return;
+  floatingCta.classList.toggle('is-hidden', window.scrollY < 260);
+}
+window.addEventListener('scroll',updateFloatingCta,{passive:true});
+updateFloatingCta();
 function moneyToCents(p){
   return Math.round(Number(p.replace(/[^0-9,]/g,'').replace('.','').replace(',','.'))*100);
 }
