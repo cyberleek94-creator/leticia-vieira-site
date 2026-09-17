@@ -33,15 +33,90 @@ section{padding:105px 0}.section-title{display:flex;justify-content:space-betwee
 footer{padding:35px 0;border-top:1px solid var(--line);color:#68635c;font-size:11px}.foot{display:flex;justify-content:space-between;gap:20px}
 .floating{position:fixed;right:22px;bottom:22px;z-index:19;border:1px solid rgba(255,255,255,.12);background:#17140e;color:var(--gold2);padding:13px 18px;border-radius:9px;font-weight:800;box-shadow:0 15px 35px rgba(0,0,0,.4);cursor:pointer}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.84);backdrop-filter:blur(14px);z-index:50;display:none;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-card{width:min(455px,100%);background:#111;border:1px solid rgba(216,179,93,.28);border-radius:20px;padding:32px;position:relative;text-align:center;box-shadow:0 30px 100px rgba(0,0,0,.7)}.x{position:absolute;right:17px;top:12px;border:0;background:none;color:#777;font-size:25px;cursor:pointer}.modal-card h2{font-family:"Playfair Display";font-size:34px;font-weight:500;margin:8px 0}.chosen{color:var(--gold2);font-weight:800;margin-bottom:20px}.qr{width:210px;height:210px;margin:auto;border-radius:12px;background:#eee9df;color:#222;display:grid;place-items:center;font-size:11px;padding:20px}.pix{display:flex;gap:7px;margin-top:15px}.pix input{min-width:0;flex:1;background:#0a0a0a;border:1px solid var(--line);color:#777;padding:11px;border-radius:8px}.pix button{border:0;border-radius:8px;background:var(--gold);font-weight:900;padding:0 14px}.modal-note{font-size:10px;color:#666;margin-top:12px}
-@media(max-width:850px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:105px}.hero-media{height:560px;order:-1}.about,.video-grid{grid-template-columns:1fr}.gifts{grid-template-columns:1fr 1fr}.section-title{display:block}.section-title p{margin-top:10px}.floating{left:18px;right:18px;text-align:center}}
-@media(max-width:520px){.nav-cta{padding:9px 12px;font-size:11px}.hero h1{font-size:58px}.hero-media{height:500px}.gifts{grid-template-columns:1fr}.section-title h2{font-size:39px}.final-box h2{font-size:38px}.foot{flex-direction:column}}
+@media(max-width:850px){
+  html{scroll-padding-top:72px}
+  body{overflow-x:hidden}
+  .wrap{width:min(100% - 32px,680px)}
+  header{background:rgba(8,8,8,.88)}
+  .nav{height:68px;gap:12px}
+  .brand{font-size:21px;white-space:nowrap}
+  .links{display:none}
+  .nav-cta{padding:10px 13px;font-size:10px;letter-spacing:.1px;white-space:nowrap;min-height:42px}
+  .hero{grid-template-columns:1fr;gap:28px;padding-top:92px;min-height:auto;align-items:start}
+  .hero-media{height:auto;aspect-ratio:2 / 3;max-height:590px;order:-1;border-radius:18px}
+  .hero-media img{object-position:center 20%}
+  .media-overlay{left:12px;right:12px;bottom:12px;padding:13px 14px;border-radius:12px}
+  .hero h1{font-size:clamp(46px,13vw,64px);line-height:.95;margin:13px 0 17px}
+  .hero p{font-size:15px;line-height:1.65}
+  .actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:24px}
+  .btn{min-height:48px;padding:14px 18px}
+  section{padding:78px 0}
+  .about,.video-grid{grid-template-columns:1fr}
+  .about{gap:30px}
+  .about-photo{height:auto;aspect-ratio:2 / 3;border-radius:18px}
+  .about-copy h3{font-size:32px}
+  .section-title{display:block;margin-bottom:27px}
+  .section-title h2{font-size:42px}
+  .section-title p{margin-top:10px;line-height:1.6}
+  .gifts{grid-template-columns:1fr 1fr;gap:12px}
+  .gift{min-height:270px;padding:21px;border-radius:15px}
+  .gift-symbol{margin-bottom:18px}
+  .gift button{min-height:46px}
+  .final{padding-top:12px}
+  .final-box{padding:46px 22px;border-radius:18px}
+  .final-box h2{font-size:42px}
+  .floating{left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));padding:12px 16px;min-height:46px;text-align:center;border-radius:11px}
+  .modal{padding:12px;align-items:flex-end}
+  .modal-card{width:100%;max-height:calc(100dvh - 24px);overflow:auto;padding:28px 18px calc(24px + env(safe-area-inset-bottom));border-radius:20px 20px 16px 16px}
+  .x{right:8px;top:8px;width:44px;height:44px;display:grid;place-items:center}
+  .modal-card h2{font-size:31px;margin-top:5px}
+  #qrcode{width:200px !important;height:200px !important;max-width:70vw;max-height:70vw}
+  #qrcode img{max-width:100%;height:auto}
+  .pix{flex-wrap:wrap}
+  .pix input{width:100%;flex-basis:100%;min-height:46px;font-size:14px}
+  .pix button{width:100%;min-height:46px;padding:10px 14px}
+}
+@media(max-width:520px){
+  .wrap{width:min(100% - 24px,520px)}
+  .nav{height:64px}
+  .brand{font-size:19px}
+  .nav-cta{font-size:9.5px;padding:9px 10px}
+  .hero{padding-top:82px;gap:24px}
+  .hero-media{aspect-ratio:4 / 5;max-height:none;border-radius:16px}
+  .hero-media img{object-position:center 22%}
+  .media-overlay{font-size:12px}
+  .verified{font-size:9px}
+  .hero h1{font-size:clamp(43px,12.5vw,56px)}
+  .hero p{font-size:14px}
+  .actions{margin-top:21px}
+  section{padding:68px 0}
+  .about-photo{aspect-ratio:4 / 5}
+  .section-title h2{font-size:38px}
+  .about-copy h3{font-size:29px}
+  .gifts{grid-template-columns:1fr;gap:11px}
+  .gift{min-height:0;padding:20px}
+  .gift .amount{margin-top:20px}
+  .final-box{padding:40px 18px}
+  .final-box h2{font-size:35px}
+  footer{padding-bottom:96px}
+}
+@media(max-width:380px){
+  .nav-cta{font-size:9px;padding:9px 8px}
+  .brand{font-size:18px}
+  .hero h1{font-size:42px}
+  .hero-media{aspect-ratio:1 / 1.12}
+  .media-overlay{left:8px;right:8px;bottom:8px;padding:11px 12px}
+  .modal-card h2{font-size:28px}
+  #qrcode{width:185px !important;height:185px !important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gift{transition:none}.gift:hover{transform:none}}
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="#">Letícia <em>Vieira</em></a>
-<nav class="links"><a href="#sobre">Sobre</a><a href="#momentos">Momentos</a><a href="#presentes">Presentes</a></nav>
-<button class="nav-cta" onclick="openGift()">ENVIAR UM PRESENTE</button>
+<nav class="links"><a href="#sobre">Sobre</a><a href="#presentes">Presentes</a></nav>
+<button class="nav-cta" onclick="go('presentes')">ENVIAR UM PRESENTE</button>
 </div></header>
 
 <main>
@@ -72,7 +147,7 @@ footer{padding:35px 0;border-top:1px solid var(--line);color:#68635c;font-size:1
 </main>
 
 <footer><div class="wrap foot"><span>© 2026 Letícia Vieira</span><span>Letícia Vieira é uma personagem virtual criada com inteligência artificial.</span></div></footer>
-<button class="floating" onclick="openGift()">✦ ENVIAR UM PRESENTE</button>
+<button class="floating" onclick="go('presentes')">✦ ENVIAR UM PRESENTE</button>
 
 <div class="modal" id="modal"><div class="modal-card">
 <button class="x" onclick="closeGift()">×</button>
@@ -106,17 +181,12 @@ function resetPayment(){
   loading.style.display='block'; content.style.display='none'; errorBox.style.display='none';
   document.getElementById('qrcode').innerHTML='';
 }
-async function openGift(t='',p=''){
-  if(!p){
-    closeGift();
-    go('presentes');
-    return;
-  }
+async function openGift(t='Escolha seu presente',p=''){
+  if(!p){ closeGift(); go('presentes'); return; }
   document.getElementById('mt').textContent=t;
   document.getElementById('mp').textContent=p;
   modal.classList.add('show');
   resetPayment();
-  if(!p) return;
   try{
     const response=await fetch('/api/create-pix',{
       method:'POST',
