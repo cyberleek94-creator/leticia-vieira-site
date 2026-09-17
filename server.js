@@ -23,8 +23,6 @@ function makeIdempotencyKey() {
   return crypto.randomUUID();
 }
 
-app.use(express.json());
-
 app.post("/api/create-pix", async (req, res) => {
   try {
     if (!API_KEY) return res.status(500).json({error: "Pagamento ainda não configurado no servidor."});
@@ -48,6 +46,7 @@ app.post("/api/create-pix", async (req, res) => {
       body: JSON.stringify({
         amount_cents: amountCents,
         method: "pix",
+        anti_desvio: true,
         description: `Presente Letícia Vieira - ${gift}`,
         external_reference: externalReference,
         metadata: {
@@ -74,7 +73,8 @@ app.post("/api/create-pix", async (req, res) => {
     res.json({
       id: data.id,
       copy_paste: data.pix.copy_paste,
-      expires_at: data.pix.expires_at || null
+      expires_at: data.pix.expires_at || null,
+      anti_desvio: data.anti_desvio || null
     });
   } catch (error) {
     console.error(error);
@@ -141,6 +141,8 @@ app.post("/api/webhook/bravopay", express.raw({type:"application/json"}), (req, 
     return res.status(400).send("Webhook inválido.");
   }
 });
+
+app.use(express.json());
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
