@@ -106,7 +106,12 @@ function resetPayment(){
   loading.style.display='block'; content.style.display='none'; errorBox.style.display='none';
   document.getElementById('qrcode').innerHTML='';
 }
-async function openGift(t='Escolha seu presente',p=''){
+async function openGift(t='',p=''){
+  if(!p){
+    closeGift();
+    go('presentes');
+    return;
+  }
   document.getElementById('mt').textContent=t;
   document.getElementById('mp').textContent=p;
   modal.classList.add('show');
