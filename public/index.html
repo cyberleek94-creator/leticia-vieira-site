@@ -1,283 +1,350 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLPHENEEVC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FLPHENEEVC');
-</script>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Letícia Vieira | Um carinho seu</title>
 <meta name="description" content="Um espaço especial para enviar um presente para Letícia Vieira.">
+<meta name="theme-color" content="#090909">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLPHENEEVC"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-FLPHENEEVC');
+</script>
 <style>
 :root{
---bg:#080808;--panel:#101010;--panel2:#151515;--text:#f4f1ea;--muted:#9c978e;
---gold:#d8b35d;--gold2:#f0d58e;--line:rgba(255,255,255,.10);--white:#fff;
+ --bg:#070707;--surface:#101010;--surface2:#151515;--text:#f7f3eb;--muted:#a19b91;
+ --gold:#d7b15b;--gold2:#f2d790;--line:rgba(255,255,255,.11);
+ --max:1160px;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 10%,rgba(216,179,93,.09),transparent 28%),radial-gradient(circle at 15% 60%,rgba(255,255,255,.025),transparent 30%)}
-a{text-decoration:none;color:inherit}.wrap{width:min(1180px,92%);margin:auto}
-header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(8,8,8,.72);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:"Playfair Display";font-size:25px}.brand em{color:var(--gold2);font-style:normal}
-.links{display:flex;gap:30px;color:#bdb8af;font-size:13px}.links a:hover{color:var(--gold2)}
-.nav-cta{border:1px solid rgba(216,179,93,.5);background:rgba(216,179,93,.08);color:var(--gold2);padding:11px 18px;border-radius:9px;font-weight:700;font-size:13px}
-.hero{padding-top:76px;min-height:790px;display:grid;grid-template-columns:.93fr 1.07fr;gap:58px;align-items:center}
-.eyebrow{font-size:10px;letter-spacing:3px;color:var(--gold2);font-weight:700;text-transform:uppercase}.hero h1{font-family:"Playfair Display";font-size:clamp(58px,7vw,96px);line-height:.94;font-weight:500;margin:16px 0}.hero h1 span{color:var(--gold2)}.hero p{color:#b8b2a9;font-size:17px;line-height:1.7;max-width:500px}
-.actions{display:flex;gap:12px;margin-top:30px}.btn{cursor:pointer;border-radius:10px;padding:14px 20px;font-weight:800;font-size:13px}.btn-gold{border:1px solid var(--gold);background:linear-gradient(135deg,#efd58f,#cda34c);color:#15120b;box-shadow:0 12px 35px rgba(216,179,93,.14)}.btn-dark{border:1px solid var(--line);background:#111;color:#ddd8cf}
-.hero-media{height:625px;border-radius:22px;overflow:hidden;position:relative;border:1px solid var(--line);background:#111}.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 24%;display:block}.media-overlay{position:absolute;inset:auto 18px 18px;padding:16px 18px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(6,6,6,.62);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between}.media-overlay strong{font-size:14px}.verified{font-size:11px;color:#c4beb4}.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:7px}
-section{padding:105px 0}.section-title{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:36px}.section-title h2{font-family:"Playfair Display";font-size:48px;font-weight:500;margin:9px 0 0}.section-title p{color:var(--muted);max-width:420px;font-size:14px}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.about-photo{height:520px;border-radius:20px;overflow:hidden;border:1px solid var(--line)}.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}.about-copy h3{font-family:"Playfair Display";font-size:38px;font-weight:500;margin:8px 0 17px}.about-copy p{color:#aaa59d;line-height:1.8}.signature{margin-top:28px;color:var(--gold2);font-family:"Playfair Display";font-size:24px}
-.video-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:20px}.video-box{height:475px;border-radius:20px;overflow:hidden;position:relative;background:#111;border:1px solid var(--line)}.video-box img{width:100%;height:100%;object-fit:cover;filter:brightness(.66)}.play{position:absolute;inset:0;margin:auto;width:76px;height:76px;border:1px solid rgba(255,255,255,.55);border-radius:50%;display:grid;place-items:center;background:rgba(8,8,8,.55);font-size:25px;padding-left:4px}.video-side{border:1px solid var(--line);background:linear-gradient(160deg,#151515,#0d0d0d);border-radius:20px;padding:30px;display:flex;flex-direction:column;justify-content:end}.video-side .mini{font-size:26px;margin-bottom:16px}.video-side h3{font-family:"Playfair Display";font-size:32px;font-weight:500;margin:0 0 12px}.video-side p{color:var(--muted);font-size:14px;line-height:1.7}
-.gifts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.gift{position:relative;padding:26px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(160deg,#151515,#0e0e0e);min-height:290px;display:flex;flex-direction:column;transition:.25s}.gift:hover{transform:translateY(-5px);border-color:rgba(216,179,93,.45)}.gift.featured{border-color:rgba(216,179,93,.55);background:linear-gradient(160deg,#191711,#10100f)}.tag{position:absolute;top:14px;right:14px;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#17130b;background:var(--gold2);padding:5px 8px;border-radius:5px;font-weight:900}.gift-symbol{width:46px;height:46px;border-radius:12px;border:1px solid rgba(216,179,93,.24);display:grid;place-items:center;font-size:20px;background:rgba(216,179,93,.06);margin-bottom:23px}.gift h3{margin:0;font-size:16px}.gift .desc{font-size:12px;color:#858078;line-height:1.6;margin-top:8px}.gift .amount{font-size:24px;font-weight:800;color:var(--gold2);margin-top:auto;margin-bottom:17px}.gift button{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(216,179,93,.35);background:transparent;color:#e6d09a;font-weight:800;cursor:pointer}.gift button:hover{background:var(--gold);color:#111}
-.note{margin-top:18px;color:#69645d;font-size:11px;text-align:center}
-.final{padding-top:30px}.final-box{border:1px solid rgba(216,179,93,.24);border-radius:22px;padding:60px 30px;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(216,179,93,.10),transparent 55%),#10100f}.final-box h2{font-family:"Playfair Display";font-size:47px;font-weight:500;margin:10px 0}.final-box p{color:var(--muted);max-width:570px;margin:0 auto 26px}
-footer{padding:35px 0;border-top:1px solid var(--line);color:#68635c;font-size:11px}.foot{display:flex;justify-content:space-between;gap:20px}
-.floating{position:fixed;right:22px;bottom:22px;z-index:19;border:1px solid rgba(255,255,255,.12);background:#17140e;color:var(--gold2);padding:13px 18px;border-radius:9px;font-weight:800;box-shadow:0 15px 35px rgba(0,0,0,.4);cursor:pointer}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.84);backdrop-filter:blur(14px);z-index:50;display:none;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-card{width:min(455px,100%);background:#111;border:1px solid rgba(216,179,93,.28);border-radius:20px;padding:32px;position:relative;text-align:center;box-shadow:0 30px 100px rgba(0,0,0,.7)}.x{position:absolute;right:17px;top:12px;border:0;background:none;color:#777;font-size:25px;cursor:pointer}.modal-card h2{font-family:"Playfair Display";font-size:34px;font-weight:500;margin:8px 0}.chosen{color:var(--gold2);font-weight:800;margin-bottom:20px}.qr{width:210px;height:210px;margin:auto;border-radius:12px;background:#eee9df;color:#222;display:grid;place-items:center;font-size:11px;padding:20px}.pix{display:flex;gap:7px;margin-top:15px}.pix input{min-width:0;flex:1;background:#0a0a0a;border:1px solid var(--line);color:#777;padding:11px;border-radius:8px}.pix button{border:0;border-radius:8px;background:var(--gold);font-weight:900;padding:0 14px}.modal-note{font-size:10px;color:#666;margin-top:12px}.anti-desvio{display:block;margin-top:14px;padding:12px 14px;border:1px solid rgba(216,179,93,.38);border-radius:9px;background:rgba(216,179,93,.07);color:#e6d09a;text-decoration:none;font-weight:800;font-size:11px;letter-spacing:.2px}.anti-desvio:hover{background:rgba(216,179,93,.14)}
-@media(max-width:850px){
-  html{scroll-padding-top:72px}
-  body{overflow-x:hidden}
-  .wrap{width:min(100% - 32px,680px)}
-  header{background:rgba(8,8,8,.88)}
-  .nav{height:68px;gap:12px}
-  .brand{font-size:21px;white-space:nowrap}
-  .links{display:none}
-  .nav-cta{padding:10px 13px;font-size:10px;letter-spacing:.1px;white-space:nowrap;min-height:42px}
-  .hero{grid-template-columns:1fr;gap:28px;padding-top:92px;min-height:auto;align-items:start}
-  .hero-media{height:auto;aspect-ratio:2 / 3;max-height:590px;order:-1;border-radius:18px}
-  .hero-media img{object-position:center 20%}
-  .media-overlay{left:12px;right:12px;bottom:12px;padding:13px 14px;border-radius:12px}
-  .hero h1{font-size:clamp(46px,13vw,64px);line-height:.95;margin:13px 0 17px}
-  .hero p{font-size:15px;line-height:1.65}
-  .actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:24px}
-  .btn{min-height:48px;padding:14px 18px}
-  section{padding:78px 0}
-  .about,.video-grid{grid-template-columns:1fr}
-  .about{gap:30px}
-  .about-photo{height:auto;aspect-ratio:2 / 3;border-radius:18px}
-  .about-copy h3{font-size:32px}
-  .section-title{display:block;margin-bottom:27px}
-  .section-title h2{font-size:42px}
-  .section-title p{margin-top:10px;line-height:1.6}
-  .gifts{grid-template-columns:1fr 1fr;gap:12px}
-  .gift{min-height:270px;padding:21px;border-radius:15px}
-  .gift-symbol{margin-bottom:18px}
-  .gift button{min-height:46px}
-  .final{padding-top:12px}
-  .final-box{padding:46px 22px;border-radius:18px}
-  .final-box h2{font-size:42px}
-  .floating{left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));padding:12px 16px;min-height:46px;text-align:center;border-radius:11px}
-  .modal{padding:12px;align-items:flex-end}
-  .modal-card{width:100%;max-height:calc(100dvh - 24px);overflow:auto;padding:28px 18px calc(24px + env(safe-area-inset-bottom));border-radius:20px 20px 16px 16px}
-  .x{right:8px;top:8px;width:44px;height:44px;display:grid;place-items:center}
-  .modal-card h2{font-size:31px;margin-top:5px}
-  #qrcode{width:200px !important;height:200px !important;max-width:70vw;max-height:70vw}
-  #qrcode img{max-width:100%;height:auto}
-  .pix{flex-wrap:wrap}
-  .pix input{width:100%;flex-basis:100%;min-height:46px;font-size:14px}
-  .pix button{width:100%;min-height:46px;padding:10px 14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 85% 8%,rgba(215,177,91,.10),transparent 28%),radial-gradient(circle at 10% 70%,rgba(255,255,255,.035),transparent 30%);z-index:-1}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:30;background:rgba(7,7,7,.74);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Playfair Display";font-size:24px}.brand span{color:var(--gold2)}
+.navlinks{display:flex;gap:26px;color:#bdb7ad;font-size:12px}
+.navlinks a{transition:.25s}.navlinks a:hover{color:var(--gold2)}
+.navcta{border:1px solid rgba(215,177,91,.45);background:rgba(215,177,91,.08);color:var(--gold2);padding:11px 16px;border-radius:10px;font-size:12px;font-weight:800}
+.hero{padding-top:72px;min-height:760px;display:grid;grid-template-columns:.92fr 1.08fr;gap:64px;align-items:center}
+.kicker{font-size:10px;text-transform:uppercase;letter-spacing:3px;color:var(--gold2);font-weight:800}
+.hero h1{font-family:"Playfair Display";font-size:clamp(60px,7.4vw,100px);line-height:.91;font-weight:500;margin:15px 0 22px;letter-spacing:-2px}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero-copy{font-size:17px;line-height:1.7;color:#bcb6ac;max-width:520px}
+.hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{border:0;cursor:pointer;border-radius:12px;padding:15px 20px;font-size:13px;font-weight:800;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,#f0d78f,#cba24b);color:#17130b;box-shadow:0 16px 38px rgba(215,177,91,.15)}
+.btn-secondary{background:#111;border:1px solid var(--line);color:#e8e2d7}
+.hero-note{margin-top:18px;font-size:11px;color:#716b62}
+.hero-visual{position:relative}
+.hero-photo{height:650px;border-radius:26px;overflow:hidden;border:1px solid var(--line);position:relative;background:#121212}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.72))}
+.hero-caption{position:absolute;left:22px;right:22px;bottom:20px;z-index:2;display:flex;justify-content:space-between;gap:18px;align-items:end}
+.hero-caption strong{font-family:"Playfair Display";font-size:26px;font-weight:500}
+.hero-caption span{font-size:10px;color:#c4bfb5;text-align:right}
+.orb{position:absolute;width:150px;height:150px;border-radius:50%;background:rgba(215,177,91,.08);filter:blur(2px);right:-55px;top:60px;pointer-events:none}
+section{padding:110px 0}
+.section-head{display:grid;grid-template-columns:1fr .65fr;gap:30px;align-items:end;margin-bottom:42px}
+.section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);font-weight:800}
+h2{font-family:"Playfair Display";font-size:clamp(42px,5vw,64px);font-weight:500;line-height:1;margin:9px 0 0;letter-spacing:-1px}
+.section-head p{color:var(--muted);font-size:14px;line-height:1.7;margin:0}
+.gifts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gift{position:relative;background:linear-gradient(160deg,#151515,#0d0d0d);border:1px solid var(--line);border-radius:18px;padding:25px;min-height:295px;display:flex;flex-direction:column;transition:transform .3s,border-color .3s,background .3s}
+.gift:hover{transform:translateY(-8px);border-color:rgba(215,177,91,.48)}
+.gift.featured{background:linear-gradient(160deg,#1a1710,#0e0e0d);border-color:rgba(215,177,91,.48)}
+.gift-icon{width:48px;height:48px;border:1px solid rgba(215,177,91,.24);background:rgba(215,177,91,.06);border-radius:14px;display:grid;place-items:center;font-size:21px;margin-bottom:22px}
+.gift h3{font-size:17px;margin:0}.gift p{font-size:12px;line-height:1.6;color:#858078;margin:8px 0 0}
+.price{font-size:25px;color:var(--gold2);font-weight:800;margin-top:auto;margin-bottom:17px}
+.gift button{min-height:46px;border-radius:10px;border:1px solid rgba(215,177,91,.42);background:transparent;color:#e9d39a;font-weight:800;cursor:pointer;transition:.25s}
+.gift button:hover{background:var(--gold);color:#111}
+.tag{position:absolute;right:14px;top:14px;font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:5px 7px;border-radius:6px;background:var(--gold2);color:#17130b;font-weight:900}
+.mini-note{text-align:center;color:#666057;font-size:10px;margin-top:18px}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:62px;align-items:center}
+.story-image{height:610px;border-radius:24px;overflow:hidden;border:1px solid var(--line)}
+.story-image img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.story-copy p{color:#aaa49b;line-height:1.85;font-size:15px}
+.signature{font-family:"Playfair Display";font-size:25px;color:var(--gold2);margin-top:28px}
+.faq-wrap{display:grid;grid-template-columns:1.18fr .82fr;gap:18px}
+.video-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#0e0e0e;position:relative}
+.video-card video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#080808}
+.video-copy{padding:26px}
+.video-copy h3{font-family:"Playfair Display";font-size:32px;font-weight:500;margin:0 0 10px}
+.video-copy p{font-size:13px;color:var(--muted);line-height:1.7;margin:0}
+.help-card{border:1px solid rgba(215,177,91,.22);border-radius:22px;padding:32px;background:radial-gradient(circle at 50% 0,rgba(215,177,91,.09),transparent 55%),#111;display:flex;flex-direction:column;justify-content:end}
+.help-number{font-family:"Playfair Display";font-size:72px;color:rgba(242,215,144,.25);line-height:1}
+.help-card h3{font-family:"Playfair Display";font-size:34px;font-weight:500;margin:15px 0 10px}
+.help-card p{color:var(--muted);font-size:13px;line-height:1.7}
+.cta{padding-top:35px}
+.cta-box{border:1px solid rgba(215,177,91,.25);border-radius:25px;padding:70px 28px;text-align:center;background:radial-gradient(circle at 50% 0,rgba(215,177,91,.11),transparent 55%),#10100f}
+.cta-box h2{font-size:52px}.cta-box p{color:var(--muted);max-width:560px;margin:14px auto 28px;line-height:1.7;font-size:14px}
+footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-size:10px}
+.foot{display:flex;justify-content:space-between;gap:20px}
+.floating{position:fixed;right:20px;bottom:20px;z-index:28;border:1px solid rgba(215,177,91,.38);background:#17130d;color:var(--gold2);padding:14px 18px;border-radius:12px;font-weight:900;font-size:12px;box-shadow:0 18px 40px rgba(0,0,0,.4);cursor:pointer;transform:translateY(90px);opacity:0;transition:.35s}
+.floating.visible{transform:none;opacity:1}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .75s ease,transform .75s ease}
+.reveal.from-left{transform:translateX(-34px)}.reveal.from-right{transform:translateX(34px)}
+.reveal.visible{opacity:1;transform:none}
+.parallax{will-change:transform;transition:transform .12s linear}
+.modal{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.86);backdrop-filter:blur(16px)}
+.modal.show{display:flex}
+.modal-card{width:min(460px,100%);background:#111;border:1px solid rgba(215,177,91,.28);border-radius:22px;padding:30px;text-align:center;position:relative}
+.close{position:absolute;right:14px;top:10px;background:none;border:0;color:#777;font-size:28px;cursor:pointer}
+.modal-card h2{font-size:35px}.chosen{color:var(--gold2);font-weight:800;margin:7px 0 18px}
+#qrcode{width:210px;height:210px;margin:0 auto;background:white;border-radius:12px;padding:10px;display:grid;place-items:center}
+.pixrow{display:flex;gap:7px;margin-top:14px}.pixrow input{min-width:0;flex:1;background:#080808;color:#8d887f;border:1px solid var(--line);padding:12px;border-radius:9px}.pixrow button{border:0;background:var(--gold);color:#17130b;font-weight:900;padding:0 14px;border-radius:9px}
+.status{font-size:10px;color:#777;margin-top:11px}.anti{display:none;margin-top:13px;padding:12px;border-radius:9px;border:1px solid rgba(215,177,91,.38);background:rgba(215,177,91,.07);color:#e8d39a;font-size:11px;font-weight:900}
+.error{display:none;color:#d99595;font-size:12px;padding:24px 0}
+@media(max-width:900px){
+ .wrap{width:min(100% - 30px,680px)}
+ .nav{height:66px}.navlinks{display:none}.brand{font-size:21px}.navcta{min-height:42px;padding:10px 13px}
+ .hero{grid-template-columns:1fr;gap:26px;padding-top:88px;min-height:auto}.hero-visual{order:-1}.hero-photo{height:auto;aspect-ratio:2/3;max-height:620px}.hero h1{font-size:clamp(50px,14vw,72px);letter-spacing:-1px}.hero-copy{font-size:15px}.hero-actions{display:grid;grid-template-columns:1fr}.btn{min-height:49px}
+ section{padding:78px 0}.section-head{display:block;margin-bottom:28px}.section-head p{margin-top:13px}
+ .gifts{grid-template-columns:1fr 1fr;gap:11px}.gift{min-height:270px;padding:20px}
+ .story,.faq-wrap{grid-template-columns:1fr;gap:28px}.story-image{height:auto;aspect-ratio:2/3}.help-card{min-height:310px}
+ .cta-box{padding:50px 20px}.cta-box h2{font-size:42px}
+ .foot{display:block}.foot span{display:block;margin-top:8px}
+ .floating{left:15px;right:15px;bottom:14px;text-align:center;min-height:48px}
 }
-@media(max-width:520px){
-  .wrap{width:min(100% - 24px,520px)}
-  .nav{height:64px}
-  .brand{font-size:19px}
-  .nav-cta{font-size:9.5px;padding:9px 10px}
-  .hero{padding-top:82px;gap:24px}
-  .hero-media{aspect-ratio:4 / 5;max-height:none;border-radius:16px}
-  .hero-media img{object-position:center 22%}
-  .media-overlay{font-size:12px}
-  .verified{font-size:9px}
-  .hero h1{font-size:clamp(43px,12.5vw,56px)}
-  .hero p{font-size:14px}
-  .actions{margin-top:21px}
-  section{padding:68px 0}
-  .about-photo{aspect-ratio:4 / 5}
-  .section-title h2{font-size:38px}
-  .about-copy h3{font-size:29px}
-  .gifts{grid-template-columns:1fr;gap:11px}
-  .gift{min-height:0;padding:20px}
-  .gift .amount{margin-top:20px}
-  .final-box{padding:40px 18px}
-  .final-box h2{font-size:35px}
-  footer{padding-bottom:96px}
-}
-@media(max-width:380px){
-  .nav-cta{font-size:9px;padding:9px 8px}
-  .brand{font-size:18px}
-  .hero h1{font-size:42px}
-  .hero-media{aspect-ratio:1 / 1.12}
-  .media-overlay{left:8px;right:8px;bottom:8px;padding:11px 12px}
-  .modal-card h2{font-size:28px}
-  #qrcode{width:185px !important;height:185px !important}
-}
-
-/* Mobile refinement v2 — keeps the floating CTA out of the way and improves first-screen spacing. */
-section[id], .hero { scroll-margin-top: 78px; }
-@media(max-width:850px){
-  .hero { padding-top: 78px; }
-  .hero > div:first-child { padding-bottom: 4px; }
-  .hero h1 { max-width: 620px; }
-  .floating {
-    left: auto; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom));
-    width: auto; max-width: calc(100% - 24px); min-height: 44px;
-    padding: 11px 14px; font-size: 11px;
-  }
-  .floating.is-hidden { opacity: 0; pointer-events: none; transform: translateY(12px); }
-}
-@media(max-width:520px){
-  section[id], .hero { scroll-margin-top: 70px; }
-  .hero { padding-top: 76px; }
-  .hero-media { margin-bottom: 2px; }
-  .floating { right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); min-height: 42px; padding: 10px 12px; font-size: 10px; border-radius: 10px; }
-}
-@media(max-width:380px){
-  .hero { padding-top: 74px; }
-  .floating { right: 8px; bottom: calc(8px + env(safe-area-inset-bottom)); font-size: 9px; padding: 9px 11px; }
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gift{transition:none}.gift:hover{transform:none}}
+@media(max-width:470px){.gifts{grid-template-columns:1fr}.gift{min-height:245px}.hero-caption{left:15px;right:15px}.hero-caption strong{font-size:22px}.hero-caption span{font-size:9px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.parallax{transform:none!important}.floating{transition:none}}
 </style>
 </head>
 <body>
-<header><div class="wrap nav">
-<a class="brand" href="#">Letícia <em>Vieira</em></a>
-<nav class="links"><a href="#sobre">Sobre</a><a href="#presentes">Presentes</a></nav>
-<button class="nav-cta" onclick="go('presentes')">ENVIAR UM PRESENTE</button>
-</div></header>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio">Letícia <span>Vieira</span></a>
+    <nav class="navlinks" aria-label="Navegação">
+      <a href="#presentes">Presentes</a>
+      <a href="#historia">Sobre</a>
+      <a href="#duvidas">Como funciona</a>
+    </nav>
+    <button class="navcta" type="button" onclick="go('presentes')">ENVIAR UM PRESENTE</button>
+  </div>
+</header>
 
-<main>
-<section class="wrap hero">
-<div>
-<div class="eyebrow">Um espaço especial</div>
-<h1>Um carinho seu.<br><span>Um sorriso meu.</span></h1>
-<p>Se você chegou até aqui, eu preparei um cantinho especial para receber aquele gesto que transforma um simples dia em um momento inesquecível.</p>
-<div class="actions"><button class="btn btn-gold" onclick="go('presentes')">✦ ESCOLHER UM PRESENTE</button><button class="btn btn-dark" onclick="go('sobre')">Conhecer a Letícia</button></div>
-</div>
-<div class="hero-media"><img src="images/leticia-principal.png"><div class="media-overlay"><div><span class="dot"></span><strong>Letícia Vieira</strong></div><div class="verified">PERSONAGEM VIRTUAL</div></div></div>
+<main id="inicio">
+<section class="hero">
+  <div class="wrap hero-copy reveal from-left">
+    <div class="kicker">Um espaço especial</div>
+    <h1>Um carinho<br>seu, <em>pra mim.</em></h1>
+    <p>Se você chegou até aqui, pode deixar um pequeno gesto de carinho. Escolha um presente e veja como é simples enviar.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" type="button" onclick="go('presentes'); track('cta_hero')">✦ ESCOLHER UM PRESENTE</button>
+      <button class="btn btn-secondary" type="button" onclick="go('duvidas'); track('faq_open_from_hero')">COMO FUNCIONA?</button>
+    </div>
+    <div class="hero-note">Pagamento por Pix · você escolhe o valor antes de gerar a cobrança.</div>
+  </div>
+  <div class="wrap hero-visual reveal from-right">
+    <div class="orb"></div>
+    <div class="hero-photo parallax">
+      <img src="images/leticia-hero.webp" alt="Letícia Vieira em um retrato interno">
+      <div class="hero-caption">
+        <strong>Letícia Vieira</strong>
+        <span>um espaço feito<br>para receber seu carinho</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="sobre"><div class="wrap"><div class="section-title"><div><div class="eyebrow">Por trás do perfil</div><h2>Prazer, Letícia.</h2></div><p>Um espaço criado para aproximar quem acompanha a personagem e quer deixar uma demonstração de carinho.</p></div>
-<div class="about"><div class="about-photo"><img src="images/leticia-sobre.png"></div><div class="about-copy"><div class="eyebrow">Sobre mim</div><h3>Fica à vontade.<br>Esse espaço é seu também.</h3><p>Seja por uma mensagem, por acompanhar meus conteúdos ou por simplesmente estar aqui, cada interação faz parte dessa experiência. Os presentes são uma forma simbólica de demonstrar esse carinho.</p><p>Escolha uma das opções abaixo e deixe seu gesto registrado de um jeito especial.</p><div class="signature">Com carinho, Letícia ✦</div></div></div></div></section>
+<section id="presentes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="section-label">Escolha seu gesto</div><h2>Qual presente<br>você quer enviar?</h2></div>
+      <p>Não precisa preencher formulários. Escolha uma opção, confira o valor e gere o Pix somente quando decidir.</p>
+    </div>
+    <div class="gifts">
+      <article class="gift reveal">
+        <div class="gift-icon">☕</div><h3>Café</h3><p>Um gesto simples para acompanhar o meu dia.</p>
+        <div class="price">R$ 5,00</div><button type="button" onclick="openGift('Café',500);trackGift('Café')">ENVIAR CAFÉ</button>
+      </article>
+      <article class="gift reveal">
+        <div class="gift-icon">🌹</div><h3>Flor</h3><p>Um carinho delicado para deixar uma lembrança.</p>
+        <div class="price">R$ 10,00</div><button type="button" onclick="openGift('Flor',1000);trackGift('Flor')">ENVIAR FLOR</button>
+      </article>
+      <article class="gift featured reveal">
+        <div class="tag">Presente especial</div><div class="gift-icon">✦</div><h3>Presente Especial</h3><p>Para quem quer deixar um carinho diferente.</p>
+        <div class="price">R$ 25,00</div><button type="button" onclick="openGift('Presente Especial',2500);trackGift('Presente Especial')">ENVIAR PRESENTE</button>
+      </article>
+      <article class="gift reveal">
+        <div class="gift-icon">♛</div><h3>Presente VIP</h3><p>Um gesto maior para marcar presença.</p>
+        <div class="price">R$ 50,00</div><button type="button" onclick="openGift('Presente VIP',5000);trackGift('Presente VIP')">ENVIAR VIP</button>
+      </article>
+    </div>
+    <div class="mini-note">A cobrança é gerada individualmente para o presente escolhido.</div>
+  </div>
+</section>
 
+<section id="historia">
+  <div class="wrap story">
+    <div class="story-image reveal from-left"><img src="images/leticia-galeria-1.webp" alt="Letícia Vieira em outro retrato"></div>
+    <div class="story-copy reveal from-right">
+      <div class="section-label">Um pouco mais de mim</div>
+      <h2>Mais que um clique,<br>é um gesto.</h2>
+      <p>Esse espaço foi pensado para quem quer demonstrar carinho de uma maneira simples. Cada opção representa um gesto diferente, e você decide livremente se quer enviar e qual valor faz sentido para você.</p>
+      <p>O pagamento só é iniciado depois que você escolhe o presente. Assim, você sabe exatamente o que está fazendo antes de gerar o Pix.</p>
+      <div class="signature">Com carinho, Letícia ✦</div>
+    </div>
+  </div>
+</section>
 
+<section id="duvidas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="section-label">Tem alguma dúvida?</div><h2>Eu te explico.</h2></div>
+      <p>Assista ao vídeo se quiser entender o caminho do presente até o pagamento.</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="video-card reveal from-left">
+        <video controls playsinline preload="metadata" poster="images/leticia-galeria-2.webp">
+          <source src="media/como-funciona-pix.mp4" type="video/mp4">
+          Seu navegador não consegue reproduzir este vídeo.
+        </video>
+        <div class="video-copy">
+          <h3>Como funciona o envio?</h3>
+          <p>Escolha um presente, gere o Pix e faça o pagamento. O vídeo foi colocado aqui somente para tirar essa dúvida antes de você decidir.</p>
+        </div>
+      </div>
+      <aside class="help-card reveal from-right">
+        <div class="help-number">01</div>
+        <h3>Você escolhe.</h3>
+        <p>Depois de escolher o presente, o site gera uma cobrança Pix com aquele valor. Nada é cobrado antes dessa etapa.</p>
+        <button class="btn btn-primary" type="button" onclick="go('presentes');track('faq_to_gifts')">VER OS PRESENTES</button>
+      </aside>
+    </div>
+  </div>
+</section>
 
-<section id="presentes"><div class="wrap"><div class="section-title"><div><div class="eyebrow">Escolha seu gesto</div><h2>Presentes</h2></div><p>Selecione uma opção e o sistema vai gerar seu Pix automaticamente.</p></div>
-<div class="gifts">
-<article class="gift"><div class="gift-symbol">☕</div><h3>Café</h3><div class="desc">Um pequeno gesto para acompanhar o dia.</div><div class="amount">R$ 5,00</div><button onclick="openGift('Café','R$ 5,00')">ENVIAR CAFÉ</button></article>
-<article class="gift"><div class="gift-symbol">🌹</div><h3>Flor</h3><div class="desc">Um carinho delicado, simples e especial.</div><div class="amount">R$ 10,00</div><button onclick="openGift('Flor','R$ 10,00')">ENVIAR FLOR</button></article>
-<article class="gift featured"><div class="tag">Mais escolhido</div><div class="gift-symbol">✦</div><h3>Presente Especial</h3><div class="desc">Para quem decidiu deixar um carinho diferente.</div><div class="amount">R$ 25,00</div><button onclick="openGift('Presente Especial','R$ 25,00')">ENVIAR PRESENTE</button></article>
-<article class="gift"><div class="gift-symbol">♛</div><h3>Presente VIP</h3><div class="desc">Um gesto maior para marcar presença.</div><div class="amount">R$ 50,00</div><button onclick="openGift('Presente VIP','R$ 50,00')">ENVIAR VIP</button></article>
-</div><div class="note">Pagamento via Pix · cobrança gerada individualmente para este presente.</div></div></section>
-
-<section class="final"><div class="wrap"><div class="final-box"><div class="eyebrow">Seu carinho</div><h2>Quer deixar um presente?</h2><p>Escolha uma das opções e faça seu gesto chegar até a Letícia.</p><button class="btn btn-gold" onclick="go('presentes')">✦ ESCOLHER MEU PRESENTE</button></div></div></section>
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <div class="section-label">Seu carinho começa aqui</div>
+      <h2>Quer deixar um presente?</h2>
+      <p>Escolha uma das quatro opções. Você verá o valor e só então poderá gerar o Pix.</p>
+      <button class="btn btn-primary" type="button" onclick="go('presentes');track('cta_bottom')">✦ ESCOLHER MEU PRESENTE</button>
+    </div>
+  </div>
+</section>
 </main>
 
-<footer><div class="wrap foot"><span>© 2026 Letícia Vieira</span><span>Letícia Vieira é uma personagem virtual criada com inteligência artificial.</span></div></footer>
-<button class="floating" id="floatingCta" onclick="go('presentes')">✦ ENVIAR UM PRESENTE</button>
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Letícia Vieira</span>
+    <span>Letícia Vieira é uma personagem virtual criada com inteligência artificial.</span>
+  </div>
+</footer>
 
-<div class="modal" id="modal"><div class="modal-card">
-<button class="x" onclick="closeGift()">×</button>
-<div class="eyebrow">Pagamento via Pix</div>
-<h2 id="mt">Seu presente</h2>
-<div class="chosen" id="mp">Selecione uma opção</div>
-<div id="payment-loading" style="padding:30px 10px;color:#9c978e">Gerando seu Pix...</div>
-<div id="payment-content" style="display:none">
-  <div id="qrcode" style="width:210px;height:210px;margin:0 auto;background:#fff;border-radius:12px;padding:10px;display:grid;place-items:center"></div>
-  <div class="pix"><input id="pix" value="" readonly><button onclick="copyPix()">COPIAR</button></div>
-  <div id="payment-status" class="modal-note">Aguardando pagamento…</div>
-  <a id="anti-desvio" class="anti-desvio" href="#" target="_blank" rel="noopener noreferrer" style="display:none">JÁ PAGUEI — ENVIAR COMPROVANTE</a>
+<button class="floating" id="floating" type="button" onclick="go('presentes');track('floating_cta')">✦ ENVIAR UM PRESENTE</button>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="close" type="button" onclick="closeGift()" aria-label="Fechar">×</button>
+    <div class="section-label">Pagamento via Pix</div>
+    <h2 id="modalTitle">Seu presente</h2>
+    <div class="chosen" id="modalPrice">R$ 0,00</div>
+    <div id="loading" style="padding:30px 0;color:#9b958c">Gerando seu Pix...</div>
+    <div id="payment" style="display:none">
+      <div id="qrcode"></div>
+      <div class="pixrow"><input id="pix" readonly aria-label="Pix copia e cola"><button type="button" onclick="copyPix()">COPIAR</button></div>
+      <div class="status" id="status">Aguardando pagamento…</div>
+      <a id="anti" class="anti" target="_blank" rel="noopener noreferrer">JÁ PAGUEI — ENVIAR COMPROVANTE</a>
+    </div>
+    <div class="error" id="error"></div>
+  </div>
 </div>
-<div id="payment-error" style="display:none;color:#d88b8b;padding:25px 5px"></div>
-</div></div>
+
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script>
 const modal=document.getElementById('modal');
-const loading=document.getElementById('payment-loading');
-const content=document.getElementById('payment-content');
-const errorBox=document.getElementById('payment-error');
-const statusBox=document.getElementById('payment-status');
-const antiDesvioBtn=document.getElementById('anti-desvio');
-let currentTx=null, pollTimer=null;
+const loading=document.getElementById('loading');
+const payment=document.getElementById('payment');
+const errorBox=document.getElementById('error');
+const statusBox=document.getElementById('status');
+const anti=document.getElementById('anti');
+const floating=document.getElementById('floating');
+let currentTx=null,pollTimer=null;
 
-function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})}
-const floatingCta=document.getElementById('floatingCta');
-function updateFloatingCta(){
-  if(!floatingCta) return;
-  floatingCta.classList.toggle('is-hidden', window.scrollY < 260);
-}
-window.addEventListener('scroll',updateFloatingCta,{passive:true});
-updateFloatingCta();
-function moneyToCents(p){
-  return Math.round(Number(p.replace(/[^0-9,]/g,'').replace('.','').replace(',','.'))*100);
-}
+function track(name,params={}){try{gtag('event',name,params)}catch(e){}}
+function trackGift(gift){track('gift_selected',{gift_name:gift});}
+function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'});}
+function money(cents){return (cents/100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});}
 function resetPayment(){
-  if(pollTimer) clearTimeout(pollTimer);
+  if(pollTimer)clearTimeout(pollTimer);
   currentTx=null;
-  loading.style.display='block'; content.style.display='none'; errorBox.style.display='none';
-  document.getElementById('qrcode').innerHTML='';
-  antiDesvioBtn.style.display='none';
-  antiDesvioBtn.removeAttribute('href');
+  loading.style.display='block';payment.style.display='none';errorBox.style.display='none';errorBox.textContent='';
+  document.getElementById('qrcode').innerHTML='';anti.style.display='none';anti.removeAttribute('href');
 }
-async function openGift(t='Escolha seu presente',p=''){
-  if(!p){ closeGift(); go('presentes'); return; }
-  document.getElementById('mt').textContent=t;
-  document.getElementById('mp').textContent=p;
-  modal.classList.add('show');
-  resetPayment();
+async function openGift(gift,amount){
+  modal.classList.add('show');modal.setAttribute('aria-hidden','false');
+  document.getElementById('modalTitle').textContent=gift;
+  document.getElementById('modalPrice').textContent=money(amount);
+  resetPayment();track('pix_checkout_open',{gift_name:gift,value:amount/100});
   try{
-    const response=await fetch('/api/create-pix',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({gift:t,amount_cents:moneyToCents(p)})
-    });
-    const data=await response.json();
-    if(!response.ok) throw new Error(data.error || 'Não foi possível gerar o Pix.');
+    const r=await fetch('/api/create-pix',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({gift,amount_cents:amount})});
+    const data=await r.json();
+    if(!r.ok)throw new Error(data.error||'Não foi possível gerar o Pix.');
     currentTx=data.id;
     document.getElementById('pix').value=data.copy_paste;
-    if(data.anti_desvio && data.anti_desvio.upload_url){
-      antiDesvioBtn.href=data.anti_desvio.upload_url;
-      antiDesvioBtn.style.display='block';
-    }
+    if(data.anti_desvio?.upload_url){anti.href=data.anti_desvio.upload_url;anti.style.display='block';}
     new QRCode(document.getElementById('qrcode'),{text:data.copy_paste,width:190,height:190,colorDark:'#111111',colorLight:'#ffffff'});
-    loading.style.display='none'; content.style.display='block';
-    pollPayment();
-  }catch(err){
-    loading.style.display='none';
-    errorBox.textContent=err.message;
-    errorBox.style.display='block';
+    loading.style.display='none';payment.style.display='block';
+    track('pix_generated',{gift_name:gift,value:amount/100,transaction_id:data.id});
+    pollStatus();
+  }catch(e){
+    loading.style.display='none';errorBox.style.display='block';errorBox.textContent=e.message||'Erro ao gerar o Pix.';
+    track('pix_generation_error',{gift_name:gift});
   }
 }
-function closeGift(){
-  if(pollTimer) clearTimeout(pollTimer);
-  modal.classList.remove('show');
-}
-async function pollPayment(){
-  if(!currentTx) return;
+async function pollStatus(){
+  if(!currentTx)return;
   try{
-    const response=await fetch('/api/payment-status/'+encodeURIComponent(currentTx));
-    const data=await response.json();
-    if(data.status==='PAID'){
-      statusBox.textContent='✓ Pagamento confirmado. Obrigado pelo carinho!';
+    const r=await fetch('/api/payment-status/'+encodeURIComponent(currentTx),{cache:'no-store'});
+    const d=await r.json();
+    if(d.status==='PAID'){
+      statusBox.textContent='Pagamento confirmado ✓';
+      track('payment_confirmed',{transaction_id:currentTx});
       return;
     }
-    if(data.status==='EXPIRED'){
-      statusBox.textContent='Este Pix expirou. Feche e gere um novo.';
-      return;
-    }
+    statusBox.textContent=d.status==='EXPIRED'?'Pix expirado.':'Aguardando pagamento…';
   }catch(e){}
-  pollTimer=setTimeout(pollPayment,5000);
+  pollTimer=setTimeout(pollStatus,5000);
 }
+function closeGift(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');if(pollTimer)clearTimeout(pollTimer);}
 async function copyPix(){
   const value=document.getElementById('pix').value;
-  try{await navigator.clipboard.writeText(value); statusBox.textContent='Pix copia e cola copiado.';}
-  catch(e){document.getElementById('pix').select();document.execCommand('copy');statusBox.textContent='Pix copia e cola copiado.';}
+  try{await navigator.clipboard.writeText(value);statusBox.textContent='Pix copiado ✓';track('pix_copied',{transaction_id:currentTx});}
+  catch(e){document.getElementById('pix').select();document.execCommand('copy');statusBox.textContent='Pix copiado ✓';track('pix_copied',{transaction_id:currentTx});}
 }
-modal.addEventListener('click',e=>{if(e.target===modal)closeGift()});
+modal.addEventListener('click',e=>{if(e.target===modal)closeGift();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGift();});
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+let lastY=window.scrollY;
+window.addEventListener('scroll',()=>{
+ const y=window.scrollY;
+ floating.classList.toggle('visible',y>420);
+ document.querySelectorAll('.parallax').forEach(el=>{
+   const r=el.getBoundingClientRect();
+   const offset=(r.top+r.height/2-window.innerHeight/2)*-0.035;
+   if(Math.abs(offset)<35)el.style.transform=`translateY(${offset}px)`;
+ });
+ if(Math.abs(y-lastY)>250)track(y>lastY?'scroll_down':'scroll_up');
+ lastY=y;
+},{passive:true});
 </script>
-</body></html>
+</body>
+</html>
