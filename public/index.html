@@ -279,12 +279,16 @@ function trackGift(gift){track('gift_selected',{gift_name:gift});}
 function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'});}
 function money(cents){return (cents/100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});}
 
-pixVideo.addEventListener('play',()=>{
-  if(!pixVideo.src){
-    pixVideo.src=pixVideo.dataset.src;
-    pixVideo.load();
-  }
-});
+let pixVideoLoaded=false;
+function loadPixVideo(){
+  if(pixVideoLoaded)return;
+  pixVideoLoaded=true;
+  pixVideo.src=pixVideo.dataset.src;
+  pixVideo.load();
+  const playPromise=pixVideo.play();
+  if(playPromise?.catch)playPromise.catch(()=>{});
+}
+pixVideo.addEventListener('pointerdown',loadPixVideo,{once:true});
 
 function resetPayment(){
   if(pollTimer)clearTimeout(pollTimer);
