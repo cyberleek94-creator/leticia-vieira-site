@@ -339,7 +339,7 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 let lastY=window.scrollY;
 window.addEventListener('scroll',()=>{
  const y=window.scrollY;
- const presents=document.getElementById('presentes'); const inGifts=y>=presents.offsetTop-80 && y<=presents.offsetTop+presents.offsetHeight-120; floating.classList.toggle('visible',y>420 && !inGifts);
+ const presents=document.getElementById('presentes'); const inGifts=y>=presents.offsetTop-80 && y<=presents.offsetTop+presents.offsetHeight-120; floating.classList.toggle('visible',y>420 && !inGifts && y<presents.offsetTop+presents.offsetHeight+40);
  document.querySelectorAll('.parallax').forEach(el=>{
    const r=el.getBoundingClientRect();
    const offset=(r.top+r.height/2-window.innerHeight/2)*-0.035;
