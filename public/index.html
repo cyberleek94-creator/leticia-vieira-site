@@ -43,7 +43,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:30;background:rgba(7,7,7,.74)
 .hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
 .btn{border:0;cursor:pointer;border-radius:12px;padding:15px 20px;font-size:13px;font-weight:800;transition:transform .25s,box-shadow .25s}
 .btn:hover{transform:translateY(-2px)}
-@keyframes buttonPulse{0%,100%{box-shadow:0 0 0 0 rgba(215,177,91,0)}50%{box-shadow:0 0 0 7px rgba(215,177,91,.10)}}
+@keyframes buttonPulse{0%,100%{box-shadow:0 0 0 0 rgba(215,177,91,0),0 0 0 rgba(215,177,91,0)}50%{box-shadow:0 0 0 12px rgba(215,177,91,.18),0 0 28px rgba(215,177,91,.28)}}
 .navcta,.btn,.gift button,.floating{animation:buttonPulse 2.8s ease-in-out infinite}
 .navcta:hover,.btn:hover,.gift button:hover,.floating:hover{animation-play-state:paused}
 .btn-primary{background:linear-gradient(135deg,#f0d78f,#cba24b);color:#17130b;box-shadow:0 16px 38px rgba(215,177,91,.15)}
