@@ -206,8 +206,7 @@ footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-s
     </div>
     <div class="faq-wrap">
       <div class="video-card reveal from-left">
-        <video controls playsinline preload="metadata" poster="images/leticia-galeria-2.webp">
-          <source src="media/como-funciona-pix.mp4" type="video/mp4">
+        <video id="pixVideo" controls playsinline preload="none" poster="images/leticia-galeria-2.webp" data-src="media/como-funciona-pix.mp4">
           Seu navegador não consegue reproduzir este vídeo.
         </video>
         <div class="video-copy">
@@ -272,12 +271,21 @@ const errorBox=document.getElementById('error');
 const statusBox=document.getElementById('status');
 const anti=document.getElementById('anti');
 const floating=document.getElementById('floating');
+const pixVideo=document.getElementById('pixVideo');
 let currentTx=null,pollTimer=null;
 
 function track(name,params={}){try{gtag('event',name,params)}catch(e){}}
 function trackGift(gift){track('gift_selected',{gift_name:gift});}
 function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'});}
 function money(cents){return (cents/100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});}
+
+pixVideo.addEventListener('play',()=>{
+  if(!pixVideo.src){
+    pixVideo.src=pixVideo.dataset.src;
+    pixVideo.load();
+  }
+});
+
 function resetPayment(){
   if(pollTimer)clearTimeout(pollTimer);
   currentTx=null;
