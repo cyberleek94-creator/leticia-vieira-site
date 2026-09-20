@@ -108,7 +108,7 @@ footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-s
 @media(max-width:900px){
  .wrap{width:min(100% - 30px,680px)}
  .nav{height:66px}.navlinks{display:none}.brand{font-size:21px}.navcta{min-height:42px;padding:10px 13px}
- .hero{grid-template-columns:1fr;gap:26px;padding-top:88px;min-height:auto}.hero-visual{order:-1}.hero-photo{height:auto;aspect-ratio:2/3;max-height:620px}.hero h1{font-size:clamp(50px,14vw,72px);letter-spacing:-1px}.hero-copy{font-size:15px}.hero-actions{display:grid;grid-template-columns:1fr}.btn{min-height:49px}
+ .hero{grid-template-columns:1fr;gap:22px;padding-top:88px;min-height:auto}.hero-copy{order:1}.hero-visual{order:2}.hero-photo{height:auto;aspect-ratio:4/3;max-height:420px}.hero h1{font-size:clamp(50px,14vw,72px);letter-spacing:-1px;margin-bottom:16px}.hero-copy{font-size:15px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-note{margin-top:12px;font-size:10px}.btn{min-height:49px}
  section{padding:78px 0}.section-head{display:block;margin-bottom:28px}.section-head p{margin-top:13px}
  .gifts{grid-template-columns:1fr 1fr;gap:11px}.gift{min-height:270px;padding:20px}
  .story,.faq-wrap{grid-template-columns:1fr;gap:28px}.story-image{height:auto;aspect-ratio:2/3}.help-card{min-height:310px}
@@ -138,12 +138,12 @@ footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-s
   <div class="wrap hero-copy reveal from-left">
     <div class="kicker">Um espaço especial</div>
     <h1>Um carinho<br>seu, <em>pra mim.</em></h1>
-    <p>Se você chegou até aqui, pode deixar um pequeno gesto de carinho. Escolha um presente e veja como é simples enviar.</p>
+    <p>Se você chegou até aqui, pode me deixar um carinho. Escolha um presente a partir de R$ 5 e envie pelo Pix — você só gera a cobrança depois de escolher.</p>
     <div class="hero-actions">
-      <button class="btn btn-primary" type="button" onclick="go('presentes'); track('cta_hero')">✦ ESCOLHER UM PRESENTE</button>
+      <button class="btn btn-primary" type="button" onclick="go('presentes'); track('cta_hero')">✦ ESCOLHER MEU PRESENTE</button>
       <button class="btn btn-secondary" type="button" onclick="go('duvidas'); track('faq_open_from_hero')">COMO FUNCIONA?</button>
     </div>
-    <div class="hero-note">Pagamento por Pix · você escolhe o valor antes de gerar a cobrança.</div>
+    <div class="hero-note">Pix rápido e seguro · você escolhe o presente e o valor antes de gerar a cobrança.</div>
   </div>
   <div class="wrap hero-visual reveal from-right">
     <div class="orb"></div>
