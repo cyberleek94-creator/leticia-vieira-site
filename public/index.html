@@ -150,7 +150,7 @@ footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-s
     <h1>Um presente<br><em>seu, com carinho.</em></h1>
     <p>Se você chegou até aqui, pode me deixar um carinho. Escolha um presente a partir de R$ 5 e envie pelo Pix — você só gera a cobrança depois de escolher.</p>
     <div class="hero-actions">
-      <button class="btn btn-primary" type="button" onclick="go('presente-especial'); track('cta_hero')">✦ ESCOLHER MEU PRESENTE</button>
+      <button class="btn btn-primary" type="button" onclick="go('presente-flor'); track('cta_hero')">✦ ESCOLHER MEU PRESENTE</button>
       <button class="btn btn-secondary" type="button" onclick="go('duvidas'); track('faq_open_from_hero')">COMO FUNCIONA?</button>
     </div>
     <div class="hero-note">Pix rápido e seguro · você escolhe o presente e o valor antes de gerar a cobrança.</div>
@@ -179,7 +179,7 @@ footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-s
         <div class="price">R$ 5,00</div><button type="button" onclick="openGift('Café',500);trackGift('Café')">ENVIAR CAFÉ</button>
       </article>
       <article class="gift reveal">
-        <div class="gift-visual flower"><span>🌹</span></div><div class="gift-icon">🌹</div><h3>Flor</h3><p>Um carinho delicado para mim.</p>
+        <div id="presente-flor" class="gift-visual flower"><span>🌹</span></div><div class="gift-icon">🌹</div><h3>Flor</h3><p>Um carinho delicado para mim.</p>
         <div class="price">R$ 10,00</div><button type="button" onclick="openGift('Flor',1000);trackGift('Flor')">ENVIAR FLOR</button>
       </article>
       <article class="gift featured reveal">
@@ -253,7 +253,7 @@ footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-s
   </div>
 </footer>
 
-<button class="floating" id="floating" type="button" onclick="go('presente-especial');track('floating_cta')">✦ ENVIAR UM PRESENTE</button>
+<button class="floating" id="floating" type="button" onclick="go('presente-flor');track('floating_cta')">✦ ENVIAR UM PRESENTE</button>
 
 <div class="modal" id="modal" aria-hidden="true">
   <div class="modal-card">
