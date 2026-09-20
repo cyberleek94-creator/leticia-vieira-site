@@ -139,7 +139,7 @@ footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-s
       <a href="#historia">Sobre</a>
       <a href="#duvidas">Como funciona</a>
     </nav>
-    <button class="navcta" type="button" onclick="go('presentes')">ENVIAR UM PRESENTE</button>
+    <button class="navcta" type="button" onclick="go('presente-especial')">ENVIAR UM PRESENTE</button>
   </div>
 </header>
 
@@ -183,7 +183,7 @@ footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-s
         <div class="price">R$ 10,00</div><button type="button" onclick="openGift('Flor',1000);trackGift('Flor')">ENVIAR FLOR</button>
       </article>
       <article class="gift featured reveal">
-        <div class="tag">Destaque</div><div class="gift-visual special"><span>🎁</span></div><div class="gift-icon">🎁</div><h3>Presente Especial</h3><p>Um gesto especial que vou lembrar.</p>
+        <div id="presente-especial" class="tag">Destaque</div><div class="gift-visual special"><span>🎁</span></div><div class="gift-icon">🎁</div><h3>Presente Especial</h3><p>Um gesto especial que vou lembrar.</p>
         <div class="price">R$ 25,00</div><button type="button" onclick="openGift('Presente Especial',2500);trackGift('Presente Especial')">ENVIAR PRESENTE</button>
       </article>
       <article class="gift reveal">
@@ -253,7 +253,7 @@ footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-s
   </div>
 </footer>
 
-<button class="floating" id="floating" type="button" onclick="go('presentes');track('floating_cta')">✦ ENVIAR UM PRESENTE</button>
+<button class="floating" id="floating" type="button" onclick="go('presente-especial');track('floating_cta')">✦ ENVIAR UM PRESENTE</button>
 
 <div class="modal" id="modal" aria-hidden="true">
   <div class="modal-card">
