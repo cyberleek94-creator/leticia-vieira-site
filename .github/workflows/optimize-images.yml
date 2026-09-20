@@ -1,0 +1,71 @@
+name: Optimize website images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "public/images/*.webp"
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install image optimizer
+        run: npm install --no-save sharp@0.33.5
+
+      - name: Optimize WebP images
+        run: |
+          node <<'NODE'
+          const sharp = require('sharp');
+          const fs = require('fs');
+
+          const files = [
+            ['public/images/leticia-hero.webp', 1600],
+            ['public/images/leticia-galeria-1.webp', 1400],
+            ['public/images/leticia-galeria-2.webp', 1400],
+          ];
+
+          (async () => {
+            for (const [file, maxWidth] of files) {
+              if (!fs.existsSync(file)) continue;
+              const input = fs.statSync(file).size;
+              const image = sharp(file);
+              const meta = await image.metadata();
+              const width = Math.min(meta.width || maxWidth, maxWidth);
+              const tmp = file + '.optimized.webp';
+
+              await image
+                .resize({ width, withoutEnlargement: true })
+                .webp({ quality: 82, effort: 6 })
+                .toFile(tmp);
+
+              const output = fs.statSync(tmp).size;
+              console.log(file + ': ' + input + ' -> ' + output + ' bytes' +
+                (input ? ' (' + ((1 - output / input) * 100).toFixed(1) + '% smaller)' : ''));
+
+              if (output < input) {
+                fs.renameSync(tmp, file);
+              } else {
+                fs.unlinkSync(tmp);
+              }
+            }
+          })().catch(err => { console.error(err); process.exit(1); });
+          NODE
+
+      - name: Commit optimized images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/*.webp
+          if git diff --cached --quiet; then
+            echo "No smaller optimized images were produced."
+            exit 0
+          fi
+          git commit -m "Optimize website WebP images [skip ci]"
+          git push
