@@ -43,6 +43,9 @@ header{position:fixed;top:0;left:0;right:0;z-index:30;background:rgba(7,7,7,.74)
 .hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
 .btn{border:0;cursor:pointer;border-radius:12px;padding:15px 20px;font-size:13px;font-weight:800;transition:transform .25s,box-shadow .25s}
 .btn:hover{transform:translateY(-2px)}
+@keyframes buttonPulse{0%,100%{box-shadow:0 0 0 0 rgba(215,177,91,0)}50%{box-shadow:0 0 0 7px rgba(215,177,91,.10)}}
+.navcta,.btn,.gift button,.floating{animation:buttonPulse 2.8s ease-in-out infinite}
+.navcta:hover,.btn:hover,.gift button:hover,.floating:hover{animation-play-state:paused}
 .btn-primary{background:linear-gradient(135deg,#f0d78f,#cba24b);color:#17130b;box-shadow:0 16px 38px rgba(215,177,91,.15)}
 .btn-secondary{background:#111;border:1px solid var(--line);color:#e8e2d7}
 .hero-note{margin-top:18px;font-size:11px;color:#716b62}
@@ -117,7 +120,7 @@ footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-s
  .floating{left:15px;right:15px;bottom:14px;text-align:center;min-height:48px}
 }
 @media(max-width:470px){.gifts{grid-template-columns:1fr}.gift{min-height:245px}.hero-caption{left:15px;right:15px}.hero-caption strong{font-size:22px}.hero-caption span{font-size:9px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.parallax{transform:none!important}.floating{transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.parallax{transform:none!important}.floating{transition:none}.navcta,.btn,.gift button,.floating{animation:none}}
 </style>
 </head>
 <body>
