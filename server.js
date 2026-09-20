@@ -56,7 +56,7 @@ app.use(express.json());
 
 const gifts = {
   "Café": 500,
-  "Flor": 1000,
+  "Uma Flor": 1000,
   "Presente Especial": 2500,
   "Presente VIP": 5000
 };
