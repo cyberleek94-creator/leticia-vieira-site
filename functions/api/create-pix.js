@@ -1,8 +1,13 @@
 const gifts = {
   "Café": 500,
+  "Uma Flor": 1000,
   "Flor": 1000,
+  "Chocolate": 1500,
+  "Buquê": 2000,
   "Presente Especial": 2500,
-  "Presente VIP": 5000
+  "Carinho Especial": 3500,
+  "Presente Premium": 5000,
+  "Presente VIP": 10000
 };
 
 export async function onRequestPost(context) {
