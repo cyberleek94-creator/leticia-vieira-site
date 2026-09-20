@@ -63,13 +63,20 @@ section{padding:110px 0}
 h2{font-family:"Playfair Display";font-size:clamp(42px,5vw,64px);font-weight:500;line-height:1;margin:9px 0 0;letter-spacing:-1px}
 .section-head p{color:var(--muted);font-size:14px;line-height:1.7;margin:0}
 .gifts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.gift{position:relative;background:linear-gradient(160deg,#151515,#0d0d0d);border:1px solid var(--line);border-radius:18px;padding:25px;min-height:295px;display:flex;flex-direction:column;transition:transform .3s,border-color .3s,background .3s}
-.gift:hover{transform:translateY(-8px);border-color:rgba(215,177,91,.48)}
-.gift.featured{background:linear-gradient(160deg,#1a1710,#0e0e0d);border-color:rgba(215,177,91,.48)}
-.gift-icon{width:48px;height:48px;border:1px solid rgba(215,177,91,.24);background:rgba(215,177,91,.06);border-radius:14px;display:grid;place-items:center;font-size:21px;margin-bottom:22px}
-.gift h3{font-size:17px;margin:0}.gift p{font-size:12px;line-height:1.6;color:#858078;margin:8px 0 0}
-.price{font-size:25px;color:var(--gold2);font-weight:800;margin-top:auto;margin-bottom:17px}
-.gift button{min-height:46px;border-radius:10px;border:1px solid rgba(215,177,91,.42);background:transparent;color:#e9d39a;font-weight:800;cursor:pointer;transition:.25s}
+.gift{position:relative;background:linear-gradient(160deg,rgba(35,8,12,.96),rgba(13,7,8,.98));border:1px solid rgba(215,177,91,.42);border-radius:18px;padding:12px;min-height:390px;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s,border-color .3s,background .3s,box-shadow .3s}
+.gift:hover{transform:translateY(-8px);border-color:rgba(242,215,144,.78);box-shadow:0 20px 50px rgba(0,0,0,.28)}
+.gift.featured{background:linear-gradient(160deg,rgba(48,9,15,.98),rgba(16,7,9,.98));border-color:rgba(215,177,91,.62)}
+.gift-visual{height:155px;border-radius:13px;display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:radial-gradient(circle at 50% 35%,rgba(215,177,91,.18),transparent 45%),linear-gradient(145deg,#2b1110,#100708)}
+.gift-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(12,4,6,.65))}
+.gift-visual.coffee{background:radial-gradient(circle at 50% 40%,rgba(205,132,55,.25),transparent 42%),linear-gradient(145deg,#2b1710,#100807)}
+.gift-visual.flower{background:radial-gradient(circle at 50% 40%,rgba(190,25,45,.28),transparent 45%),linear-gradient(145deg,#30090e,#100507)}
+.gift-visual.special{background:radial-gradient(circle at 50% 40%,rgba(215,177,91,.25),transparent 45%),linear-gradient(145deg,#2a1a0d,#100806)}
+.gift-visual.vip{background:radial-gradient(circle at 50% 40%,rgba(215,177,91,.28),transparent 45%),linear-gradient(145deg,#26170c,#090606)}
+.gift-visual span{font-size:72px;filter:drop-shadow(0 8px 16px rgba(0,0,0,.55));position:relative;z-index:1}
+.gift-icon{width:44px;height:44px;border:1px solid rgba(215,177,91,.5);background:#160b0c;border-radius:50%;display:grid;place-items:center;font-size:19px;margin:-22px 0 13px 10px;position:relative;z-index:2}
+.gift h3{font-family:"Playfair Display";font-size:23px;font-weight:500;margin:0 10px}.gift p{font-size:12px;line-height:1.5;color:#aaa09b;margin:6px 10px 0}
+.price{font-size:25px;color:var(--gold2);font-weight:800;margin-top:auto;margin-bottom:14px;margin-left:10px}
+.gift button{min-height:48px;border-radius:24px;border:1px solid rgba(215,177,91,.58);background:rgba(215,177,91,.06);color:#f2d790;font-weight:800;cursor:pointer;transition:.25s;margin:0 2px 2px;box-shadow:0 0 18px rgba(215,177,91,.08)}
 .gift button:hover{background:var(--gold);color:#111}
 .tag{position:absolute;right:14px;top:14px;font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:5px 7px;border-radius:6px;background:var(--gold2);color:#17130b;font-weight:900}
 .mini-note{text-align:center;color:#666057;font-size:10px;margin-top:18px}
@@ -168,19 +175,19 @@ footer{padding:38px 0 90px;border-top:1px solid var(--line);color:#69635a;font-s
     </div>
     <div class="gifts">
       <article class="gift reveal">
-        <div class="gift-icon">☕</div><h3>Café</h3><p>Um cafezinho para alegrar meu dia.</p>
+        <div class="gift-visual coffee"><span>☕</span></div><div class="gift-icon">☕</div><h3>Café</h3><p>Um cafezinho para alegrar meu dia.</p>
         <div class="price">R$ 5,00</div><button type="button" onclick="openGift('Café',500);trackGift('Café')">ENVIAR CAFÉ</button>
       </article>
       <article class="gift reveal">
-        <div class="gift-icon">🌹</div><h3>Flor</h3><p>Um carinho delicado para mim.</p>
+        <div class="gift-visual flower"><span>🌹</span></div><div class="gift-icon">🌹</div><h3>Flor</h3><p>Um carinho delicado para mim.</p>
         <div class="price">R$ 10,00</div><button type="button" onclick="openGift('Flor',1000);trackGift('Flor')">ENVIAR FLOR</button>
       </article>
       <article class="gift featured reveal">
-        <div class="tag">Presente especial</div><div class="gift-icon">🎁</div><h3>Presente Especial</h3><p>Um gesto especial que vou lembrar.</p>
+        <div class="tag">Destaque</div><div class="gift-visual special"><span>🎁</span></div><div class="gift-icon">🎁</div><h3>Presente Especial</h3><p>Um gesto especial que vou lembrar.</p>
         <div class="price">R$ 25,00</div><button type="button" onclick="openGift('Presente Especial',2500);trackGift('Presente Especial')">ENVIAR PRESENTE</button>
       </article>
       <article class="gift reveal">
-        <div class="gift-icon">👑</div><h3>Presente VIP</h3><p>Para quem quer deixar um carinho maior.</p>
+        <div class="gift-visual vip"><span>👑</span></div><div class="gift-icon">👑</div><h3>Presente VIP</h3><p>Para quem quer deixar um carinho maior.</p>
         <div class="price">R$ 50,00</div><button type="button" onclick="openGift('Presente VIP',5000);trackGift('Presente VIP')">ENVIAR VIP</button>
       </article>
     </div>
