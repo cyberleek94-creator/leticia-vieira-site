@@ -55,14 +55,7 @@ app.post("/api/webhook/bravopay", express.raw({type:"application/json"}), (req, 
 app.use(express.json());
 
 const gifts = {
-  "Café": 500,
-  "Uma Flor": 1000,
-  "Chocolate": 1500,
-  "Buquê": 2000,
-  "Presente Especial": 2500,
-  "Carinho Especial": 3500,
-  "Presente Premium": 5000,
-  "Presente VIP": 10000
+  "Acesso Vitalício": 1490
 };
 
 function makeIdempotencyKey() {
