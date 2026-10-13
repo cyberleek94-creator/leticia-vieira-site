@@ -55,7 +55,9 @@ app.post("/api/webhook/bravopay", express.raw({type:"application/json"}), (req, 
 app.use(express.json());
 
 const gifts = {
-  "Acesso Vitalício": 1490
+  "30 Dias": 990,
+  "Acesso Vitalício": 1490,
+  "Super Combo Exclusivo": 2590
 };
 
 function makeIdempotencyKey() {
