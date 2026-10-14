@@ -80,14 +80,19 @@ app.post("/api/create-pix", async (req, res) => {
       "combo exclusivo": "Super Combo Exclusivo"
     };
     const normalized = normalizeGift(requestedGift);
-    const gift = gifts[requestedGift] ? requestedGift : aliases[normalized];
-
-    if (!gift || !gifts[gift]) {
-      return res.status(400).json({error: "Plano não reconhecido. Feche a janela e selecione um dos planos disponíveis novamente."});
+    // Primeiro tenta reconhecer o nome do plano; como compatibilidade com versões
+    // antigas do navegador, aceita também somente os valores oficiais cadastrados.
+    let gift = gifts[requestedGift] ? requestedGift : aliases[normalized];
+    const requestedAmount = Number(req.body?.amount_cents);
+    if (!gift && Number.isInteger(requestedAmount)) {
+      gift = Object.keys(gifts).find(name => gifts[name] === requestedAmount);
     }
 
-    // O preço oficial vem sempre do servidor; valores antigos enviados pelo navegador
-    // não bloqueiam o Pix e nunca podem alterar o preço cobrado.
+    if (!gift || !Object.prototype.hasOwnProperty.call(gifts, gift)) {
+      return res.status(400).json({error: "Plano não reconhecido. Atualize a página e selecione um dos planos disponíveis novamente."});
+    }
+
+    // O preço oficial vem sempre do servidor; o navegador não pode definir outro preço.
     const amountCents = gifts[gift];
 
     const externalReference = `leticia_${Date.now()}_${crypto.randomBytes(4).toString("hex")}`;
