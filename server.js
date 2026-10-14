@@ -69,12 +69,11 @@ app.post("/api/create-pix", async (req, res) => {
     if (!API_KEY) return res.status(500).json({error: "Pagamento ainda não configurado no servidor."});
 
     const requestedGift = String(req.body?.gift || "").trim();
-    const normalizeGift = value => value.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    const normalizeGift = value => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
     const aliases = {
       "30 dias": "30 Dias",
       "mensal": "30 Dias",
       "acesso vitalicio": "Acesso Vitalício",
-      "vitalicio": "Acesso Vitalício",
       "vitalicio": "Acesso Vitalício",
       "super combo exclusivo": "Super Combo Exclusivo",
       "super combo": "Super Combo Exclusivo",
