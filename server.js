@@ -68,12 +68,28 @@ app.post("/api/create-pix", async (req, res) => {
   try {
     if (!API_KEY) return res.status(500).json({error: "Pagamento ainda não configurado no servidor."});
 
-    const gift = String(req.body?.gift || "");
-    const amountCents = Number(req.body?.amount_cents);
+    const requestedGift = String(req.body?.gift || "").trim();
+    const normalizeGift = value => value.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    const aliases = {
+      "30 dias": "30 Dias",
+      "mensal": "30 Dias",
+      "acesso vitalicio": "Acesso Vitalício",
+      "vitalicio": "Acesso Vitalício",
+      "vitalicio": "Acesso Vitalício",
+      "super combo exclusivo": "Super Combo Exclusivo",
+      "super combo": "Super Combo Exclusivo",
+      "combo exclusivo": "Super Combo Exclusivo"
+    };
+    const normalized = normalizeGift(requestedGift);
+    const gift = gifts[requestedGift] ? requestedGift : aliases[normalized];
 
-    if (!gifts[gift] || gifts[gift] !== amountCents) {
-      return res.status(400).json({error: "Presente ou valor inválido."});
+    if (!gift || !gifts[gift]) {
+      return res.status(400).json({error: "Plano não reconhecido. Feche a janela e selecione um dos planos disponíveis novamente."});
     }
+
+    // O preço oficial vem sempre do servidor; valores antigos enviados pelo navegador
+    // não bloqueiam o Pix e nunca podem alterar o preço cobrado.
+    const amountCents = gifts[gift];
 
     const externalReference = `leticia_${Date.now()}_${crypto.randomBytes(4).toString("hex")}`;
 
